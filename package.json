@@ -1,0 +1,29 @@
+{
+  "name": "extended-math",
+  "version": "1.0.0",
+  "description": "A collection mathemtatical helper functions and constant values.",
+  "main": "dist/extended-math.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nitro404/extended-math.git"
+  },
+  "keywords": [
+    "extended",
+    "math",
+    "helper",
+    "functions",
+    "constants"
+  ],
+  "author": "Kevin Scroggins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nitro404/extended-math/issues"
+  },
+  "homepage": "https://github.com/nitro404/extended-math#readme",
+  "dependencies": {
+    "extra-utilities": "^1.1.0"
+  }
+}
