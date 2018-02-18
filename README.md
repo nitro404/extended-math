@@ -21,7 +21,7 @@ A collection mathemtatical helper functions and constant values.
 ## Server-Side Usage
 
 ```javascript
-const extendedMath = require("extended-math");
+var extendedMath = require("extended-math");
 
 extendedMath.clamp(5, 0, 2); // => 2
 ```
