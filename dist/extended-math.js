@@ -12,7 +12,7 @@
 		}
 	}
 
-	let extendedMath = { };
+	var extendedMath = { };
 
 	extendedMath.HalfPI = 1.57079632679489661923;
 	extendedMath.QuarterPI = 0.78539816339744830962;
@@ -43,8 +43,8 @@
 			return 0;
 		}
 
-		let c = a % 360;
-		let d = b % 360;
+		var c = a % 360;
+		var d = b % 360;
 
 		if(c < 0) {
 			c += 360;
