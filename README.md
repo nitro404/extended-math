@@ -33,6 +33,17 @@ To install this module:
 npm install extended-math
 ```
 
+## Building
+
+To build the distribution files for this module:
+```bash
+npm run build
+```
+or
+```bash
+gulp build
+```
+
 [npm-url]: https://www.npmjs.com/package/extended-math
 [npm-version-image]: https://img.shields.io/npm/v/extended-math.svg
 [npm-downloads-image]: http://img.shields.io/npm/dm/extended-math.svg
