@@ -22,7 +22,9 @@
     "functions",
     "constants"
   ],
-  "author": "Kevin Scroggins",
+  "author": {
+    "name": "Kevin Scroggins"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nitro404/extended-math/issues"
