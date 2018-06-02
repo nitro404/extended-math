@@ -29,10 +29,10 @@
   },
   "homepage": "https://github.com/nitro404/extended-math#readme",
   "dependencies": {
-    "extra-utilities": "^1.1.0"
+    "extra-utilities": "^1.2.14"
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "gulp-fabricator": "^1.0.1"
+    "gulp-fabricator": "^1.0.2"
   }
 }
