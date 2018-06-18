@@ -1,6 +1,6 @@
 {
   "name": "extended-math",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A collection mathemtatical helper functions and constant values.",
   "main": "dist/extended-math.js",
   "scripts": {
