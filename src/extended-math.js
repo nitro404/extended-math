@@ -1,33 +1,31 @@
-if(typeof require !== "undefined") {
-	if(typeof utilities === "undefined") {
-		global.utilities = require("extra-utilities");
-	}
-}
-
 var extendedMath = { };
+
+function isInvalidNumber(value) {
+	return typeof value !== "number" || isNaN(value) || value === -Infinity || value === Infinity;
+}
 
 extendedMath.HalfPI = 1.57079632679489661923;
 extendedMath.QuarterPI = 0.78539816339744830962;
 extendedMath.TwoPI = 6.28318530717958647693;
 
 extendedMath.clamp = function(value, min, max) {
-	return utilities.isInvalidNumber(value) || utilities.isInvalidNumber(min) || utilities.isInvalidNumber(max) ? NaN : value < min ? min : value > max ? max : value;
+	return isInvalidNumber(value) || isInvalidNumber(min) || isInvalidNumber(max) ? NaN : value < min ? min : value > max ? max : value;
 };
 
 extendedMath.distance = function(a, b) {
-	return utilities.isInvalidNumber(a) || utilities.isInvalidNumber(b) ? NaN : Math.abs(b - a);
+	return isInvalidNumber(a) || isInvalidNumber(b) ? NaN : Math.abs(b - a);
 };
 
 extendedMath.radiansToDegrees = function(value) {
-	return utilities.isInvalidNumber(value) ? NaN : value * (180 / Math.PI);
+	return isInvalidNumber(value) ? NaN : value * (180 / Math.PI);
 };
 
 extendedMath.degreesToRadians = function(value) {
-	return utilities.isInvalidNumber(value) ? NaN : value * (Math.PI / 180);
+	return isInvalidNumber(value) ? NaN : value * (Math.PI / 180);
 };
 
 extendedMath.compareAnglesDegrees = function(a, b) {
-	if(utilities.isInvalidNumber(a) || utilities.isInvalidNumber(b)) {
+	if(isInvalidNumber(a) || isInvalidNumber(b)) {
 		return NaN;
 	}
 
@@ -54,11 +52,11 @@ extendedMath.compareAnglesDegrees = function(a, b) {
 };
 
 extendedMath.compareAnglesRadians = function(a, b) {
-	return utilities.isInvalidNumber(a) || utilities.isInvalidNumber(b) ? NaN : extendedMath.compareAnglesDegrees(extendedMath.radiansToDegrees(a), extendedMath.radiansToDegrees(b));
+	return isInvalidNumber(a) || isInvalidNumber(b) ? NaN : extendedMath.compareAnglesDegrees(extendedMath.radiansToDegrees(a), extendedMath.radiansToDegrees(b));
 };
 
 extendedMath.lerp = function(a, b, amount) {
-	if(utilities.isInvalidNumber(a) || utilities.isInvalidNumber(b) || utilities.isInvalidNumber(amount)) {
+	if(isInvalidNumber(a) || isInvalidNumber(b) || isInvalidNumber(amount)) {
 		return NaN;
 	}
 
@@ -73,7 +71,7 @@ extendedMath.lerp = function(a, b, amount) {
 };
 
 extendedMath.normalize = function(value, min, max) {
-	return utilities.isInvalidNumber(value) || utilities.isInvalidNumber(min) || utilities.isInvalidNumber(max) ? NaN : (value - min) / (max - min);
+	return isInvalidNumber(value) || isInvalidNumber(min) || isInvalidNumber(max) ? NaN : (value - min) / (max - min);
 };
 
 return extendedMath;

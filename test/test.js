@@ -2,18 +2,18 @@
 
 global.utilities = undefined;
 
-var extendedMath = require("../dist/extended-math.js");
-var utilities = require("extra-utilities");
-var chai = require("chai");
-var expect = chai.expect;
+const extendedMath = require("../dist/extended-math.js");
+const utilities = require("extra-utilities");
+const chai = require("chai");
+const expect = chai.expect;
 
-var testDate = new Date();
+const testDate = new Date();
 
-var emptyFunction = function() { };
+const emptyFunction = function() { };
 
-var testRegExp = new RegExp(".+");
+const testRegExp = new RegExp(".+");
 
-var invalidTestData = [
+const invalidTestData = [
 	undefined,
 	null,
 	false,
@@ -36,7 +36,7 @@ var invalidTestData = [
 	testRegExp
 ];
 
-var validTestData = [
+const validTestData = [
 	-180,
 	-7,
 	-extendedMath.HalfPI,
@@ -85,13 +85,13 @@ describe("Extended Math", function() {
 		});
 
 		it("should return NaN for any combination of invalid arguments", function() {
-			for(var i = 0; i < invalidTestData.length; i++) {
+			for(let i = 0; i < invalidTestData.length; i++) {
 				expect(extendedMath.clamp(invalidTestData[i])).to.be.NaN;
 
-				for(var j = 0; j < invalidTestData.length; j++) {
+				for(let j = 0; j < invalidTestData.length; j++) {
 					expect(extendedMath.clamp(invalidTestData[i], invalidTestData[j])).to.be.NaN;
 
-					for(var k = 0; k < invalidTestData.length; k++) {
+					for(let k = 0; k < invalidTestData.length; k++) {
 						if(invalidTestData[i] === 0 && invalidTestData[j] === 0 && invalidTestData[k] === 0) {
 							continue;
 						}
@@ -103,7 +103,7 @@ describe("Extended Math", function() {
 		});
 
 		it("should return the correct value for any combination of valid arguments", function() {
-			var results = [
+			const results = [
 				[
 					[-180, -180, -180, -180, -180, -180, -180, -180, -180],
 					[-7, -7, -7, -7, -7, -7, -7, -7, -7],
@@ -205,9 +205,9 @@ describe("Extended Math", function() {
 				]
 			];
 
-			for(var i = 0; i < validTestData.length; i++) {
-				for(var j = 0; j < validTestData.length; j++) {
-					for(var k = 0; k < validTestData.length; k++) {
+			for(let i = 0; i < validTestData.length; i++) {
+				for(let j = 0; j < validTestData.length; j++) {
+					for(let k = 0; k < validTestData.length; k++) {
 						if(isNaN(results[i][j][k])) {
 							expect(extendedMath.clamp(validTestData[i], validTestData[j], validTestData[k])).to.be.NaN;
 						}
@@ -226,10 +226,10 @@ describe("Extended Math", function() {
 		});
 
 		it("should return NaN for any combination of invalid arguments", function() {
-			for(var i = 0; i < invalidTestData.length; i++) {
+			for(let i = 0; i < invalidTestData.length; i++) {
 				expect(extendedMath.distance(invalidTestData[i])).to.be.NaN;
 
-				for(var j = 0; j < invalidTestData.length; j++) {
+				for(let j = 0; j < invalidTestData.length; j++) {
 					if(invalidTestData[i] === 0 && invalidTestData[j] === 0) {
 						continue;
 					}
@@ -240,7 +240,7 @@ describe("Extended Math", function() {
 		});
 
 		it("should return the correct value for any combination of valid arguments", function() {
-			var results = [
+			const results = [
 				[0, 173, 178.4292036732051, 179, 180, 181, 186.2831853071796, 187, 540],
 				[173, 0, 5.429203673205103, 6, 7, 8, 13.283185307179586, 14, 367],
 				[178.4292036732051, 5.429203673205103, 0, 0.5707963267948966, 1.5707963267948966, 2.5707963267948966, 7.853981633974483, 8.570796326794897, 361.5707963267949],
@@ -252,8 +252,8 @@ describe("Extended Math", function() {
 				[540, 367, 361.5707963267949, 361, 360, 359, 353.71681469282044, 353, 0]
 			];
 
-			for(var i = 0; i < validTestData.length; i++) {
-				for(var j = 0; j < validTestData.length; j++) {
+			for(let i = 0; i < validTestData.length; i++) {
+				for(let j = 0; j < validTestData.length; j++) {
 					if(isNaN(results[i][j])) {
 						expect(extendedMath.distance(validTestData[i], validTestData[j])).to.be.NaN;
 					}
@@ -271,7 +271,7 @@ describe("Extended Math", function() {
 		});
 
 		it("should return NaN for any invalid arguments", function() {
-			for(var i = 0; i < invalidTestData.length; i++) {
+			for(let i = 0; i < invalidTestData.length; i++) {
 				if(invalidTestData[i] === 0) {
 					continue;
 				}
@@ -281,9 +281,9 @@ describe("Extended Math", function() {
 		});
 
 		it("should return the correct value for any valid arguments", function() {
-			var results = [-10313.240312354817, -401.07045659157626, -90, -57.29577951308232, 0, 57.29577951308232, 360, 401.07045659157626, 20626.480624709635];
+			const results = [-10313.240312354817, -401.07045659157626, -90, -57.29577951308232, 0, 57.29577951308232, 360, 401.07045659157626, 20626.480624709635];
 
-			for(var i = 0; i < validTestData.length; i++) {
+			for(let i = 0; i < validTestData.length; i++) {
 				if(isNaN(results[i])) {
 					expect(extendedMath.radiansToDegrees(validTestData[i])).to.be.NaN;
 				}
@@ -300,7 +300,7 @@ describe("Extended Math", function() {
 		});
 
 		it("should return NaN for any combination of invalid arguments", function() {
-			for(var i = 0; i < invalidTestData.length; i++) {
+			for(let i = 0; i < invalidTestData.length; i++) {
 				if(invalidTestData[i] === 0) {
 					continue;
 				}
@@ -310,9 +310,9 @@ describe("Extended Math", function() {
 		});
 
 		it("should return the correct value for any valid arguments", function() {
-			var results = [-3.141592653589793, -0.12217304763960307, -0.027415567780803774, -0.017453292519943295, 0, 0.017453292519943295, 0.1096622711232151, 0.12217304763960307, 6.283185307179586];
+			const results = [-3.141592653589793, -0.12217304763960307, -0.027415567780803774, -0.017453292519943295, 0, 0.017453292519943295, 0.1096622711232151, 0.12217304763960307, 6.283185307179586];
 
-			for(var i = 0; i < validTestData.length; i++) {
+			for(let i = 0; i < validTestData.length; i++) {
 				if(isNaN(results[i])) {
 					expect(extendedMath.degreesToRadians(validTestData[i])).to.be.NaN;
 				}
@@ -329,10 +329,10 @@ describe("Extended Math", function() {
 		});
 
 		it("should return NaN for any combination of invalid arguments", function() {
-			for(var i = 0; i < invalidTestData.length; i++) {
+			for(let i = 0; i < invalidTestData.length; i++) {
 				expect(extendedMath.compareAnglesDegrees(invalidTestData[i])).to.be.NaN;
 
-				for(var j = 0; j < invalidTestData.length; j++) {
+				for(let j = 0; j < invalidTestData.length; j++) {
 					if(invalidTestData[i] === 0 && invalidTestData[j] === 0) {
 						continue;
 					}
@@ -343,7 +343,7 @@ describe("Extended Math", function() {
 		});
 
 		it("should return the correct value for any combination of valid arguments", function() {
-			var results = [
+			const results = [
 				[ 0,  1,  1,  1,  1, -1, -1, -1,  1],
 				[-1,  0,  1,  1,  1,  1,  1,  1,  1],
 				[-1, -1,  0,  1,  1,  1,  1,  1,  1],
@@ -355,8 +355,8 @@ describe("Extended Math", function() {
 				[-1, -1, -1, -1,  0,  1,  1,  1,  0]
 			];
 
-			for(var i = 0; i < validTestData.length; i++) {
-				for(var j = 0; j < validTestData.length; j++) {
+			for(let i = 0; i < validTestData.length; i++) {
+				for(let j = 0; j < validTestData.length; j++) {
 					if(isNaN(results[i][j])) {
 						expect(extendedMath.compareAnglesDegrees(validTestData[i], validTestData[j])).to.be.NaN;
 					}
@@ -374,10 +374,10 @@ describe("Extended Math", function() {
 		});
 
 		it("should return NaN for any combination of invalid arguments", function() {
-			for(var i = 0; i < invalidTestData.length; i++) {
+			for(let i = 0; i < invalidTestData.length; i++) {
 				expect(extendedMath.compareAnglesRadians(invalidTestData[i])).to.be.NaN;
 
-				for(var j = 0; j < invalidTestData.length; j++) {
+				for(let j = 0; j < invalidTestData.length; j++) {
 					if(invalidTestData[i] === 0 && invalidTestData[j] === 0) {
 						continue;
 					}
@@ -388,7 +388,7 @@ describe("Extended Math", function() {
 		});
 
 		it("should return the correct value for any combination of valid arguments", function() {
-			var results = [
+			const results = [
 				[ 0, -1,  1,  1, -1, -1, -1, -1, -1],
 				[ 1,  0, -1, -1,  1,  1,  1,  1,  1],
 				[-1,  1,  0,  1,  1,  1,  1,  1, -1],
@@ -400,8 +400,8 @@ describe("Extended Math", function() {
 				[ 1, -1,  1, -1, -1, -1, -1, -1,  0]
 			];
 
-			for(var i = 0; i < validTestData.length; i++) {
-				for(var j = 0; j < validTestData.length; j++) {
+			for(let i = 0; i < validTestData.length; i++) {
+				for(let j = 0; j < validTestData.length; j++) {
 					if(isNaN(results[i][j])) {
 						expect(extendedMath.compareAnglesRadians(validTestData[i], validTestData[j])).to.be.NaN;
 					}
@@ -419,13 +419,13 @@ describe("Extended Math", function() {
 		});
 
 		it("should return NaN for any combination of invalid arguments", function() {
-			for(var i = 0; i < invalidTestData.length; i++) {
+			for(let i = 0; i < invalidTestData.length; i++) {
 				expect(extendedMath.lerp(invalidTestData[i])).to.be.NaN;
 
-				for(var j = 0; j < invalidTestData.length; j++) {
+				for(let j = 0; j < invalidTestData.length; j++) {
 					expect(extendedMath.lerp(invalidTestData[i], invalidTestData[j])).to.be.NaN;
 
-					for(var k = 0; k < invalidTestData.length; k++) {
+					for(let k = 0; k < invalidTestData.length; k++) {
 						if(invalidTestData[i] === 0 && invalidTestData[j] === 0 && invalidTestData[k] === 0) {
 							continue;
 						}
@@ -437,7 +437,7 @@ describe("Extended Math", function() {
 		});
 
 		it("should return the correct value for any combination of valid arguments", function() {
-			var results = [
+			const results = [
 				[
 					[-180, -180, -180, -180, -180, -180, -180, -180, -180],
 					[-31320, -1391, -451.7477645355171, -353, -180, -7, 906.9910581420684, 1031, 62100],
@@ -539,9 +539,9 @@ describe("Extended Math", function() {
 				]
 			];
 
-			for(var i = 0; i < validTestData.length; i++) {
-				for(var j = 0; j < validTestData.length; j++) {
-					for(var k = 0; k < validTestData.length; k++) {
+			for(let i = 0; i < validTestData.length; i++) {
+				for(let j = 0; j < validTestData.length; j++) {
+					for(let k = 0; k < validTestData.length; k++) {
 						if(isNaN(results[i][j][k])) {
 							expect(extendedMath.lerp(validTestData[i], validTestData[j], validTestData[k])).to.be.NaN;
 						}
@@ -560,13 +560,13 @@ describe("Extended Math", function() {
 		});
 
 		it("should return NaN for any combination of invalid arguments", function() {
-			for(var i = 0; i < invalidTestData.length; i++) {
+			for(let i = 0; i < invalidTestData.length; i++) {
 				expect(extendedMath.normalize(invalidTestData[i])).to.be.NaN;
 
-				for(var j = 0; j < invalidTestData.length; j++) {
+				for(let j = 0; j < invalidTestData.length; j++) {
 					expect(extendedMath.normalize(invalidTestData[i], invalidTestData[j])).to.be.NaN;
 
-					for(var k = 0; k < invalidTestData.length; k++) {
+					for(let k = 0; k < invalidTestData.length; k++) {
 						if(invalidTestData[i] === 0 && invalidTestData[j] === 0 && invalidTestData[k] === 0) {
 							continue;
 						}
@@ -578,7 +578,7 @@ describe("Extended Math", function() {
 		});
 
 		it("should return the correct value for any combination of valid arguments", function() {
-			var results = [
+			const results = [
 				[
 					[NaN, 0, 0, 0, 0, 0, 0, 0, 0],
 					[1, -Infinity, -31.864709893609554, -28.833333333333332, -24.714285714285715, -21.625, -13.023984533776938, -12.357142857142858, -0.4713896457765668],
@@ -680,9 +680,9 @@ describe("Extended Math", function() {
 				]
 			];
 
-			for(var i = 0; i < validTestData.length; i++) {
-				for(var j = 0; j < validTestData.length; j++) {
-					for(var k = 0; k < validTestData.length; k++) {
+			for(let i = 0; i < validTestData.length; i++) {
+				for(let j = 0; j < validTestData.length; j++) {
+					for(let k = 0; k < validTestData.length; k++) {
 						if(isNaN(results[i][j][k])) {
 							expect(extendedMath.normalize(validTestData[i], validTestData[j], validTestData[k])).to.be.NaN;
 						}

@@ -1,6 +1,6 @@
 {
   "name": "extended-math",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A collection mathemtatical helper functions and constant values.",
   "main": "dist/extended-math.js",
   "scripts": {
@@ -25,16 +25,13 @@
   "author": {
     "name": "Kevin Scroggins"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nitro404/extended-math/issues"
   },
   "homepage": "https://github.com/nitro404/extended-math#readme",
-  "dependencies": {
-    "extra-utilities": "^1.2.14"
-  },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "gulp-fabricator": "^1.0.2"
+    "chai": "^4.2.0",
+    "gulp-fabricator": "^1.1.0"
   }
 }
