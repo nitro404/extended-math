@@ -1,14 +1,14 @@
 {
   "name": "extended-math",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A collection mathemtatical helper functions and constant values.",
-  "main": "dist/extended-math.js",
+  "main": "src/extended-math.js",
   "scripts": {
     "build": "gulp build",
     "lint": "gulp lint",
     "test": "mocha",
-    "coverage": "istanbul cover node_modules/mocha/bin/_mocha --require test/**/*.js",
-    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
+    "coverage": "nyc npm run test",
+    "coveralls": "npm run coverage && nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,6 @@
   "homepage": "https://github.com/nitro404/extended-math#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "gulp-fabricator": "^1.1.0"
+    "gulp-fabricator": "^1.2.0"
   }
 }

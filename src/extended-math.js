@@ -74,4 +74,4 @@ extendedMath.normalize = function(value, min, max) {
 	return isInvalidNumber(value) || isInvalidNumber(min) || isInvalidNumber(max) ? NaN : (value - min) / (max - min);
 };
 
-return extendedMath;
+module.exports = extendedMath;

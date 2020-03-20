@@ -2,7 +2,7 @@
 
 global.utilities = undefined;
 
-const extendedMath = require("../dist/extended-math.js");
+const extendedMath = require("../src/extended-math.js");
 const utilities = require("extra-utilities");
 const chai = require("chai");
 const expect = chai.expect;
