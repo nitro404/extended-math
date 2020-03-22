@@ -10,7 +10,11 @@
 [![Contributors][contributors-image]][contributors-url]
 [![Pull Requests Welcome][pull-requests-image]][pull-requests-url]
 
-A collection mathemtatical helper functions and constant values.
+A collection of JavaScript mathemtatical helper functions and constant values.
+
+## Documentation
+
+Complete API documentation is available [here][documentation-url].
 
 ## Client-Side Usage
 
@@ -18,7 +22,7 @@ A collection mathemtatical helper functions and constant values.
 <script src="extended-math.js"></script>
 
 <script type="text/javascript">
-	extendedMath.clamp(5, 0, 2); // => 2
+	extendedMath.clamp(5, 0, 2); // => 2 
 </script>
 ```
 
@@ -27,7 +31,7 @@ A collection mathemtatical helper functions and constant values.
 ```javascript
 const extendedMath = require("extended-math");
 
-extendedMath.clamp(5, 0, 2); // => 2
+extendedMath.normalize(1, 0, 2); // => 0.5
 ```
 
 ## Installation
@@ -43,10 +47,21 @@ To build the distribution files for this module:
 ```bash
 npm run build
 ```
-or
+
+## Running Unit Tests
+
+To run the unit test suite for this module:
 ```bash
-gulp build
+npm run test
 ```
+
+## Generating Documentation
+
+```bash
+npm run docs
+```
+
+[documentation-url]: https://nitro404.github.io/extended-math/module-extendedMath.html
 
 [npm-url]: https://www.npmjs.com/package/extended-math
 [npm-version-image]: https://img.shields.io/npm/v/extended-math.svg

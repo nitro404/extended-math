@@ -12,27 +12,38 @@
 		return typeof value !== "number" || isNaN(value) || value === -Infinity || value === Infinity;
 	}
 
-	extendedMath.HalfPI = 1.57079632679489661923;
-	extendedMath.QuarterPI = 0.78539816339744830962;
-	extendedMath.TwoPI = 6.28318530717958647693;
+	Object.defineProperty(extendedMath, "HalfPI", {
+		value: 1.57079632679489661923,
+		enumerable: true
+	});
 
-	extendedMath.clamp = function(value, min, max) {
+	Object.defineProperty(extendedMath, "QuarterPI", {
+		value: 0.78539816339744830962,
+		enumerable: true
+	});
+
+	Object.defineProperty(extendedMath, "TwoPI", {
+		value: 6.28318530717958647693,
+		enumerable: true
+	});
+
+	extendedMath.clamp = function clamp(value, min, max) {
 		return isInvalidNumber(value) || isInvalidNumber(min) || isInvalidNumber(max) ? NaN : value < min ? min : value > max ? max : value;
 	};
 
-	extendedMath.distance = function(a, b) {
+	extendedMath.difference = function difference(a, b) {
 		return isInvalidNumber(a) || isInvalidNumber(b) ? NaN : Math.abs(b - a);
 	};
 
-	extendedMath.radiansToDegrees = function(value) {
+	extendedMath.radiansToDegrees = function radiansToDegrees(value) {
 		return isInvalidNumber(value) ? NaN : value * (180 / Math.PI);
 	};
 
-	extendedMath.degreesToRadians = function(value) {
+	extendedMath.degreesToRadians = function degreesToRadians(value) {
 		return isInvalidNumber(value) ? NaN : value * (Math.PI / 180);
 	};
 
-	extendedMath.compareAnglesDegrees = function(a, b) {
+	extendedMath.compareAnglesDegrees = function compareAnglesDegrees(a, b) {
 		if(isInvalidNumber(a) || isInvalidNumber(b)) {
 			return NaN;
 		}
@@ -59,11 +70,11 @@
 		return Math.cos(extendedMath.degreesToRadians(a - b) + (Math.PI / 2)) < 0 ? -1 : 1;
 	};
 
-	extendedMath.compareAnglesRadians = function(a, b) {
+	extendedMath.compareAnglesRadians = function compareAnglesRadians(a, b) {
 		return isInvalidNumber(a) || isInvalidNumber(b) ? NaN : extendedMath.compareAnglesDegrees(extendedMath.radiansToDegrees(a), extendedMath.radiansToDegrees(b));
 	};
 
-	extendedMath.lerp = function(a, b, amount) {
+	extendedMath.lerp = function lerp(a, b, amount) {
 		if(isInvalidNumber(a) || isInvalidNumber(b) || isInvalidNumber(amount)) {
 			return NaN;
 		}
@@ -75,10 +86,10 @@
 			return b;
 		}
 
-		return a + (b - a) * amount;
+		return a + ((b - a) * amount);
 	};
 
-	extendedMath.normalize = function(value, min, max) {
+	extendedMath.normalize = function normalize(value, min, max) {
 		return isInvalidNumber(value) || isInvalidNumber(min) || isInvalidNumber(max) ? NaN : (value - min) / (max - min);
 	};
 

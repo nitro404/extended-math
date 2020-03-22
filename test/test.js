@@ -220,21 +220,21 @@ describe("Extended Math", function() {
 		});
 	});
 
-	describe("distance", function() {
+	describe("difference", function() {
 		it("should be a function", function() {
-			expect(extendedMath.distance instanceof Function).to.equal(true);
+			expect(extendedMath.difference instanceof Function).to.equal(true);
 		});
 
 		it("should return NaN for any combination of invalid arguments", function() {
 			for(let i = 0; i < invalidTestData.length; i++) {
-				expect(extendedMath.distance(invalidTestData[i])).to.be.NaN;
+				expect(extendedMath.difference(invalidTestData[i])).to.be.NaN;
 
 				for(let j = 0; j < invalidTestData.length; j++) {
 					if(invalidTestData[i] === 0 && invalidTestData[j] === 0) {
 						continue;
 					}
 
-					expect(extendedMath.distance(invalidTestData[i], invalidTestData[j])).to.be.NaN;
+					expect(extendedMath.difference(invalidTestData[i], invalidTestData[j])).to.be.NaN;
 				}
 			}
 		});
@@ -255,10 +255,10 @@ describe("Extended Math", function() {
 			for(let i = 0; i < validTestData.length; i++) {
 				for(let j = 0; j < validTestData.length; j++) {
 					if(isNaN(results[i][j])) {
-						expect(extendedMath.distance(validTestData[i], validTestData[j])).to.be.NaN;
+						expect(extendedMath.difference(validTestData[i], validTestData[j])).to.be.NaN;
 					}
 					else {
-						expect(extendedMath.distance(validTestData[i], validTestData[j])).to.equal(results[i][j]);
+						expect(extendedMath.difference(validTestData[i], validTestData[j])).to.equal(results[i][j]);
 					}
 				}
 			}
