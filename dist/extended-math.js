@@ -35,6 +35,8 @@
 		return isInvalidNumber(a) || isInvalidNumber(b) ? NaN : Math.abs(b - a);
 	};
 
+	extendedMath.distance = extendedMath.difference;
+
 	extendedMath.radiansToDegrees = function radiansToDegrees(value) {
 		return isInvalidNumber(value) ? NaN : value * (180 / Math.PI);
 	};

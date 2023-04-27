@@ -1,10 +1,8 @@
 # Extended Math
 
 [![NPM version][npm-version-image]][npm-url]
-[![Build Status][build-status-image]][build-status-url]
 [![Coverage Status][coverage-image]][coverage-url]
 [![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
-[![Dependencies][dependencies-image]][dependencies-url]
 [![Downloads][npm-downloads-image]][npm-url]
 [![Install Size][install-size-image]][install-size-url]
 [![Contributors][contributors-image]][contributors-url]
@@ -16,7 +14,7 @@ A collection of JavaScript mathemtatical helper functions and constant values.
 
 Complete API documentation is available [here][documentation-url].
 
-## Client-Side Usage
+## Web Usage
 
 ```html
 <script src="extended-math.js"></script>
@@ -26,7 +24,7 @@ Complete API documentation is available [here][documentation-url].
 </script>
 ```
 
-## Server-Side Usage
+## Node.js Usage
 
 ```javascript
 const extendedMath = require("extended-math");
@@ -67,17 +65,11 @@ npm run docs
 [npm-version-image]: https://img.shields.io/npm/v/extended-math.svg
 [npm-downloads-image]: http://img.shields.io/npm/dm/extended-math.svg
 
-[build-status-url]: https://travis-ci.org/nitro404/extended-math
-[build-status-image]: https://travis-ci.org/nitro404/extended-math.svg?branch=master
-
 [coverage-url]: https://coveralls.io/github/nitro404/extended-math?branch=master
 [coverage-image]: https://coveralls.io/repos/github/nitro404/extended-math/badge.svg?branch=master
 
 [vulnerabilities-url]: https://snyk.io/test/github/nitro404/extended-math?targetFile=package.json
 [vulnerabilities-image]: https://snyk.io/test/github/nitro404/extended-math/badge.svg?targetFile=package.json
-
-[dependencies-url]: https://david-dm.org/nitro404/extended-math
-[dependencies-image]: https://img.shields.io/david/nitro404/extended-math.svg
 
 [install-size-url]: https://packagephobia.now.sh/result?p=extended-math
 [install-size-image]: https://badgen.net/packagephobia/install/extended-math

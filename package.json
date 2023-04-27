@@ -1,6 +1,6 @@
 {
   "name": "extended-math",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A collection of JavaScript mathemtatical helper functions and constant values.",
   "main": "src/extended-math.js",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nitro404/extended-math.git"
+    "url": "git+https://github.com/nitro404/extended-math.git"
   },
   "keywords": [
     "extended",
@@ -32,7 +32,7 @@
   },
   "homepage": "https://nitro404.github.io/extended-math/module-extendedMath.html",
   "devDependencies": {
-    "chai": "^4.2.0",
-    "gulp-fabricator": "^1.2.5"
+    "chai": "^4.3.7",
+    "gulp-fabricator": "^1.2.6"
   }
 }
